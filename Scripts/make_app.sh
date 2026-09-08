@@ -10,9 +10,12 @@
 #       内容与 GitHub Release 中的 Sona.app.zip 一致）
 #
 # 版本号来源（优先级从高到低）：
-#   1. 环境变量 SONA_VERSION / SONA_BUILD
-#   2. 最近的 git tag（如 v1.1.3 -> 1.1.3）
-#   3. 回退默认 1.1.3 / build 1
+#   VERSION：1. SONA_VERSION 环境变量  2. 最近的 git tag（如 v1.1.3 -> 1.1.3）  3. 默认 1.1.3
+#   BUILD  ：1. SONA_BUILD 环境变量     2. 默认 15（硬编码，与当前 Release 的 CFBundleVersion 一致；
+#            发新版本前请手动 bump。注意不能取 git 提交数——提交数会随历史变动，导致签名内
+#            Info.plist 槽位哈希变化，产物与 Release 无法逐字节对齐）
+VERSION_DEFAULT="1.1.3"
+BUILD_DEFAULT="15"
 
 set -euo pipefail
 
@@ -29,9 +32,9 @@ if [ -n "${SONA_VERSION:-}" ]; then
 elif git describe --tags --abbrev=0 >/dev/null 2>&1; then
   VERSION=$(git describe --tags --abbrev=0 | sed 's/^v//')
 else
-  VERSION="1.1.3"
+  VERSION="$VERSION_DEFAULT"
 fi
-BUILD="${SONA_BUILD:-$(git rev-list --count HEAD 2>/dev/null || echo 1)}"
+BUILD="${SONA_BUILD:-$BUILD_DEFAULT}"
 
 # ---- 防呆 ----
 if [ ! -x "$BIN" ]; then
