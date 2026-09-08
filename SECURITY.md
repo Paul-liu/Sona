@@ -2,7 +2,7 @@
 
 ## 支持的版本
 
-我们仅为**最新版本**提供安全修复。请始终使用 [Releases](https://github.com/paulliu/Sona/releases) 中的最新版。
+我们仅为**最新版本**提供安全修复。请始终使用 [Releases](https://github.com/Paul-liu/Sona/releases) 中的最新版。
 
 | 版本 | 是否支持 |
 | --- | --- |
@@ -13,7 +13,7 @@
 
 **请不要通过公开 Issue 报告安全漏洞。**
 
-请通过 GitHub 的 [Security Advisories](https://github.com/paulliu/Sona/security/advisories/new) 私下报告，并包含：
+请通过 GitHub 的 [Security Advisories](https://github.com/Paul-liu/Sona/security/advisories/new) 私下报告，并包含：
 
 - 漏洞类型与影响范围
 - 复现步骤或概念验证代码

@@ -6,7 +6,7 @@
 
 ## 开始前
 
-- **提 Issue 前先搜索** [已有 Issue](https://github.com/paulliu/Sona/issues)，避免重复。
+- **提 Issue 前先搜索** [已有 Issue](https://github.com/Paul-liu/Sona/issues)，避免重复。
 - **大型改动先讨论**：如果要改架构、加新网盘或引入依赖，请先开一个 Issue 或 Discussion 说明方案，达成共识后再动手，避免白做。
 - **小改动直接 PR**：修 Bug、改文案、补文档这类，直接提 PR 即可。
 
@@ -19,7 +19,7 @@
 | 依赖 | 无（本项目零第三方依赖，也请保持这一点） |
 
 ```bash
-git clone https://github.com/paulliu/Sona.git
+git clone https://github.com/Paul-liu/Sona.git
 cd Sona
 swift build                    # 编译
 swift run Sona                 # 运行

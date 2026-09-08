@@ -47,14 +47,14 @@ Sona 是一款为 macOS 打造的桌面音乐播放器，用 **纯 SwiftUI + AVF
 
 ### 方式一：下载预编译版本
 
-从 [Releases](https://github.com/paulliu/Sona/releases) 下载 `Sona.app.zip`，解压后拖入应用程序文件夹。
+从 [Releases](https://github.com/Paul-liu/Sona/releases) 下载 `Sona.app.zip`，解压后拖入应用程序文件夹。
 
 > 未使用 Apple Developer ID 签名，首次打开请在 Finder 中**右键 → 打开**以绕过 Gatekeeper。
 
 ### 方式二：从源码构建
 
 ```bash
-git clone https://github.com/paulliu/Sona.git
+git clone https://github.com/Paul-liu/Sona.git
 cd Sona
 swift run Sona
 ```
@@ -162,7 +162,7 @@ tail -50 /tmp/sona_aliyun_import.log
 
 欢迎任何形式的贡献 —— 修 Bug、加网盘、改进 UI、完善文档。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-首次贡献者可以从这些 [Good First Issues](https://github.com/paulliu/Sona/labels/good%20first%20issue) 入手。
+首次贡献者可以从这些 [Good First Issues](https://github.com/Paul-liu/Sona/labels/good%20first%20issue) 入手。
 
 ## 路线图
 
@@ -173,7 +173,7 @@ tail -50 /tmp/sona_aliyun_import.log
 - [ ] 全局快捷键（无焦点时仍可控制）
 - [ ] AirPlay / 输出设备切换
 
-欢迎在 [Discussions](https://github.com/paulliu/Sona/discussions) 里投票或提议。
+欢迎在 [Discussions](https://github.com/Paul-liu/Sona/discussions) 里投票或提议。
 
 ## 免责声明
 
