@@ -61,7 +61,15 @@ Sona 是一款为 macOS 打造的桌面音乐播放器，用 **纯 SwiftUI + AVF
 
 从 [Releases](https://github.com/Paul-liu/Sona/releases) 下载 `Sona.app.zip`，解压后拖入应用程序文件夹。
 
-> 未使用 Apple Developer ID 签名，首次打开请在 Finder 中**右键 → 打开**以绕过 Gatekeeper。
+> **首次打开提示处理**：本 App 使用 ad-hoc 签名（本地构建、未做 Apple 公证），
+> 从浏览器下载后 macOS 的 Gatekeeper 会提示 **「无法验证开发者」** 并默认阻止打开。
+> 这是正常的，按下面任一方式放行即可（每个新版本只需操作一次）：
+>
+> - **方式 A（推荐）**：在 Finder 中**右键点击 `Sona.app` → 选择「打开」** → 在弹窗中点「打开」；
+> - **方式 B**：打开 **系统设置 → 隐私与安全性**，在页面下方找到 Sona 的拦截记录，点 **「仍要打开」**；
+>
+> 若仍被阻止，可在「隐私与安全性」中确认是否误选了「App Store 和被认可的开发者」之外的严格选项，
+> 或到 [Issues](https://github.com/Paul-liu/Sona/issues) 反馈你的 macOS 版本与报错截图。
 
 ### 方式二：从源码构建
 
