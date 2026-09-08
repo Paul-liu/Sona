@@ -73,24 +73,26 @@ Sona 是一款为 macOS 打造的桌面音乐播放器，用 **纯 SwiftUI + AVF
 
 ### 方式二：从源码构建
 
+环境要求：**macOS 13.0+** / **Swift 5.9+**（Xcode 15 或 Command Line Tools 附带均可）。
+
 ```bash
 git clone https://github.com/Paul-liu/Sona.git
 cd Sona
-swift run Sona
+swift run Sona    # 开发调试：直接编译并运行
 ```
 
-生产构建：
+构建可双击使用的 App（与 Releases 一致的 .app）：
 
 ```bash
-swift build -c release
+swift build -c release --disable-sandbox
+./Scripts/make_app.sh    # 在工程根目录生成 Sona.app
 ```
 
-> 若遇到 `sandbox-exec: sandbox_apply: Operation not permitted`，加 `--disable-sandbox` 参数即可：
-> ```bash
-> swift build -c release --disable-sandbox
-> ```
-
-环境要求：**macOS 13.0+** / **Swift 5.9+**（Xcode 15 及以上附带）。
+> `--disable-sandbox`：SwiftPM 在部分环境（如仅安装 Command Line Tools）会报
+> `sandbox-exec: sandbox_apply: Operation not permitted`，此参数可安全绕过，官方构建流程中默认使用。
+>
+> `make_app.sh` 会把构建产物与图标组装成标准 `Sona.app`（版本号自动取自最近的 git tag，
+> 如 `v1.1.3`），生成后拖入「应用程序」文件夹即可，内容与 GitHub Releases 下载一致。
 
 ## 使用说明
 

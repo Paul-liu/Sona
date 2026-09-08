@@ -74,6 +74,14 @@ else
 fi
 
 echo
+echo "==> 确保 Sona.app 存在"
+if [ ! -d "Sona.app" ]; then
+  echo "    未找到 Sona.app，先执行 release 构建并组装（可能需要几分钟）..."
+  swift build -c release --disable-sandbox
+  ./Scripts/make_app.sh
+fi
+
+echo
 echo "==> 打包 Sona.app.zip"
 if [ -d "Sona.app" ]; then
   rm -f "Sona.app.zip"
