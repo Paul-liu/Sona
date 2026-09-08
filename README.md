@@ -15,7 +15,9 @@
 </div>
 
 <div align="center">
-  <img src="Assets/social-preview.png" alt="Sona — macOS 原生音乐播放器" width="820"/>
+  <img src="Assets/app-screenshot.png" alt="Sona App 截图" width="820"/>
+  <br/>
+  <sub>侧边栏「云端」聚合夸克网盘与阿里云盘分享，支持免登录匿名访问</sub>
 </div>
 
 ---
