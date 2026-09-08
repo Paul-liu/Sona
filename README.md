@@ -15,6 +15,12 @@
 </div>
 
 <div align="center">
+  <img src="Assets/social-preview.png" alt="Sona — 品牌横幅" width="700"/>
+</div>
+
+<br/>
+
+<div align="center">
   <img src="Assets/app-screenshot.png" alt="Sona App 截图" width="820"/>
   <br/>
   <sub>侧边栏「云端」聚合夸克网盘与阿里云盘分享，支持免登录匿名访问</sub>
