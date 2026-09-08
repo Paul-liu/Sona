@@ -14,6 +14,10 @@
 
 </div>
 
+<div align="center">
+  <img src="Assets/social-preview.png" alt="Sona — macOS 原生音乐播放器" width="820"/>
+</div>
+
 ---
 
 ## 这是什么
