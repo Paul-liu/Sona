@@ -74,6 +74,23 @@ else
 fi
 
 echo
+echo "==> 打包 Sona.app.zip"
+if [ -d "Sona.app" ]; then
+  rm -f "Sona.app.zip"
+  # 关键：必须在工程根目录以 Sona.app 作为参数打包，
+  # 使 zip 顶层是 Sona.app/（若在 bundle 内执行 zip . 会得到顶层 Contents/，用户将无法安装）
+  zip -qry "Sona.app.zip" "Sona.app"
+  if unzip -l "Sona.app.zip" | grep -q "Sona.app/Contents/Info.plist"; then
+    echo "    ✅ Sona.app.zip 已生成（$(du -h Sona.app.zip | cut -f1)，顶层含 Sona.app/）"
+  else
+    echo "    ❌ 打包校验失败：zip 顶层缺少 Sona.app/Contents/Info.plist，中止发布"
+    exit 1
+  fi
+else
+  echo "    ⚠️ 未找到 Sona.app，将发布仅源码的 Release"
+fi
+
+echo
 echo "==> 发布 Release（附带 Sona.app.zip）"
 if gh release view "v${VERSION}" >/dev/null 2>&1; then
   echo "    Release v${VERSION} 已存在，跳过"
