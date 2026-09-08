@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# 同一分支的新推送会取消正在运行的旧任务，节省 CI 时长
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build (macOS ${{ matrix.macos }})
+    runs-on: ${{ matrix.macos }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # macos-13 为 Intel，macos-14 为 Apple Silicon，覆盖两种架构
+        macos: [macos-14]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Swift version
+        run: swift --version
+
+      - name: Build (debug)
+        run: swift build --disable-sandbox
+
+      - name: Build (release)
+        run: swift build -c release --disable-sandbox
+
+      # 未来接入测试后取消注释：
+      # - name: Run tests
+      #   run: swift test --disable-sandbox

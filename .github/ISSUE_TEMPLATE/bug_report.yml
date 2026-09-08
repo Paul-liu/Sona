@@ -1,0 +1,102 @@
+name: 🐛 问题反馈
+description: 报告一个 Bug 或异常行为
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！提交前请先搜索 [已有 Issue](https://github.com/paulliu/Sona/issues) 避免重复。
+
+  - type: input
+    id: version
+    attributes:
+      label: Sona 版本
+      description: 菜单栏 Sona → 关于，或查看 Sona.app 的版本号
+      placeholder: "例如 1.1.3"
+    validations:
+      required: true
+
+  - type: input
+    id: macos
+    attributes:
+      label: macOS 版本
+      placeholder: "例如 macOS 14.5 (23F79)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题所属模块
+      options:
+        - 本地音乐导入/播放
+        - 夸克网盘
+        - 阿里云盘
+        - 播放控制（进度条/切歌/循环）
+        - 界面/UI 显示
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 请尽量写清楚每一步，方便我们定位
+      placeholder: |
+        1. 打开 Sona
+        2. 点击侧边栏「...」
+        3. 粘贴分享链接「...」
+        4. 点击「解析并导入」
+        5. 出现错误「...」
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+      placeholder: 应该成功导入并显示 N 首歌
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      placeholder: 提示「列举分享文件失败：HTTP 429」
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 诊断日志
+      description: |
+        运行以下命令并把输出贴在这里 —— 这对定位网络类问题非常关键：
+
+        ```bash
+        tail -50 /tmp/sona_quark_import.log    # 夸克问题
+        tail -50 /tmp/sona_aliyun_import.log   # 阿里云盘问题
+        ```
+        ⚠️ 提交前请自行删除日志中的 Cookie、Token 等敏感信息。
+      render: shell
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图
+      description: 如果是 UI 问题，请附上截图
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 确认
+      options:
+        - label: 我已搜索过已有 Issue，确认没有重复
+          required: true
+        - label: 我使用的是最新版本
+          required: false
+        - label: 我已清除日志中的敏感信息
+          required: false
