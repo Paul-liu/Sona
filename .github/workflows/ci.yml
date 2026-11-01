@@ -18,8 +18,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # macos-13 为 Intel，macos-14 为 Apple Silicon，覆盖两种架构
-        macos: [macos-14]
+        # macos-latest 跟随 GitHub 当前的 macOS runner 镜像
+        macos: [macos-latest]
 
     steps:
       - name: Checkout
